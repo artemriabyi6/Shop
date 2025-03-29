@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      {!isCartPage && <Header onSearch={setSearchQuery} />}
+      <Header onSearch={setSearchQuery} />
       <Outlet context={{ searchQuery }} />
     </>
   );
