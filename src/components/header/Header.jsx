@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-black p-4 mb-10 flex justify-between">
+    <header className="w-full bg-black p-4 mb-10 flex justify-between items-center">
       <div>
         <Link to="/" className="text-white">Title</Link>
       </div>
@@ -22,7 +22,7 @@ const Header = () => {
         onChange={handleSearch}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className="p-2 rounded bg-white text-white border-white border"
+        className="p-2 rounded  text-white border-white border"
       />
       <CartCounter />
     </header>

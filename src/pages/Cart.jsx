@@ -61,6 +61,7 @@
 import { useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 const Cart = () => {
   const { cartList, setCartList, setItemToLocalStorage } = useCart();
@@ -107,6 +108,7 @@ const Cart = () => {
         <p className="text-xl font-bold">Total: {total} UAH</p>
       </div>
     </main>
+    <Footer/>
     </>
   );
 };

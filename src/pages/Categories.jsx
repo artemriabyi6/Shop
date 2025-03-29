@@ -12,6 +12,9 @@ import robot from "../assets/images/robot.png";
 const categoriesList = [
   { img: roses, category: "flowers", name: "Rose", price: "100 UAH", id: 1 },
   { img: sunflower, category: "flowers", name: "Sunflower", price: "80 UAH", id: 4 },
+  { img: null, category: "flowers", name: "tulpan", price: "80 UAH", id: 7 },
+  { img: null, category: "flowers", name: "archi", price: "80 UAH", id: 8 },
+  { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 9 },
   { img: tesla, category: "cars", name: "Tesla", price: "10000 UAH", id: 5 },
   { img: robot, category: "toys", name: "Robot", price: "1000 UAH", id: 6 },
   { img: megane, category: "cars", name: "Megane", price: "7000 UAH", id: 2 },
@@ -47,7 +50,7 @@ const Categories = () => {
               {category}
             </NavLink>
           ))}
-          <div className="flex justify-around">
+          <div className="flex justify-around flex-wrap">
             {currentPath ? (
               filteredArray.length > 0 ? (
                 filteredArray.map((obj) => (
