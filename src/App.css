@@ -57,3 +57,21 @@ main {
     flex-direction: column;
     gap: 10px;
 }
+
+.total {
+    position: absolute;
+    right: 150px;
+    top: 0px;
+}
+
+.cart-container {
+    padding: 0 89px;
+}
+
+.empty-cart-text {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    font-weight: 400;
+    font-size: 20px;
+}
