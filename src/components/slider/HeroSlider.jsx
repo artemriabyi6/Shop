@@ -44,9 +44,9 @@ const HeroSlider = ({ allProducts, addToCart }) => {
         {slides[currentSlide].map((product) => (
           <div
             key={product.id}
-            className="w-1/2 bg-white rounded-xl shadow p-4 flex flex-col items-center"
+            className="w-1/3 bg-white rounded-xl shadow p-4 flex flex-col items-center justify-center"
           >
-            <Link to={`/${product.category}/${product.id}`} className="w-full">
+            <Link to={`/${product.category}/${product.id}`}>
               <div className="w-[300px] h-[300px] flex items-center justify-center overflow-hidden rounded-lg">
                 {product.img ? (
                   <img src={product.img} alt={product.name} className="object-contain w-full h-full" />
@@ -57,12 +57,6 @@ const HeroSlider = ({ allProducts, addToCart }) => {
             </Link>
             <h3 className="text-lg font-semibold text-center mt-4">{product.name}</h3>
             <p className="text-green-600 font-bold mt-2">{product.price}</p>
-            <button
-              onClick={() => addToCart(product)}
-              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              Додати в кошик
-            </button>
           </div>
         ))}
       </div>
