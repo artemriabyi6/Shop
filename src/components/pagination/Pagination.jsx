@@ -10,8 +10,8 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
           onClick={() => setCurrentPage(index + 1)}
           className={`px-4 py-2 border rounded transition-all duration-200 ${
             currentPage === index + 1
-              ? "bg-red-500 text-white border-red-500"
-              : "bg-white hover:bg-red-100"
+              ? "bg-red-500 text-white border-red-500 cursor-pointer"
+              : "bg-white hover:bg-red-100 cursor-pointer"
           }`}
         >
           {index + 1}
