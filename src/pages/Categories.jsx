@@ -2,6 +2,7 @@ import { NavLink, useLocation, Link, Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import { useSearch } from "../context/SearchContext";
+import Pagination from "../components/pagination/Pagination";
 import { useState } from "react";
 import megane from "../assets/images/Megane.png";
 import roses from "../assets/images/roses.png";
@@ -19,7 +20,7 @@ const categoriesList = [
   { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 10 },
   { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 11 },
   { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 12 },
-  { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 13 },
+  { img: null, category: "flowers", name: "denchi", price: "80 UAH", id: 13},
   { img: tesla, category: "cars", name: "Tesla", price: "10000 UAH", id: 5 },
   { img: robot, category: "toys", name: "Robot", price: "1000 UAH", id: 6 },
   { img: megane, category: "cars", name: "Megane", price: "7000 UAH", id: 2 },
@@ -27,8 +28,6 @@ const categoriesList = [
 ];
 
 const uniqueCategories = [...new Set(categoriesList.map((obj) => obj.category))];
-
-// ... імпорти залишаються без змін
 
 const Categories = () => {
   const location = useLocation();
@@ -109,23 +108,12 @@ const Categories = () => {
             ) : null}
           </div>
 
-          {/* PAGINATION - only if category selected OR search in focus */}
           {shouldShowPagination && (
-            <div className="flex justify-center mt-6 gap-2">
-              {[...Array(totalPages)].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPage(index + 1)}
-                  className={`px-4 py-2 border rounded transition-all duration-200 ${
-                    currentPage === index + 1
-                      ? "bg-red-500 text-white border-red-500"
-                      : "bg-white hover:bg-red-100"
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           )}
         </div>
         <Outlet context={{ categoriesList }} />
@@ -136,7 +124,6 @@ const Categories = () => {
 };
 
 export default Categories;
-
 
 
 
