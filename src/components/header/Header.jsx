@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import CartCounter from "../CartCounter";
 import { useSearch } from "../../context/SearchContext";
 
+
 const Header = () => {
   const { searchQuery, setSearchQuery,  setIsFocused } = useSearch();
 
@@ -12,7 +13,7 @@ const Header = () => {
   return (
     <header className="w-full bg-black p-4 mb-10 flex justify-between items-center">
       <div>
-        <Link to="/" className="text-white">Title</Link>
+        <Link to="/" className="text-white w-[20px]">Home</Link>
       </div>
       <input
 
