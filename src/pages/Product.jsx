@@ -75,7 +75,7 @@ const Product = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="rounded-lg px-4 w-3xs border border-red mt-6 flex flex-col items-center justify-center">
+      <div className="rounded-lg px-4 w-3xs border border-red mt-6 flex flex-col items-center justify-center bg-white overflow-hidden">
         <div className="product-image-container">
           <img
             ref={imgRef}
